@@ -1,14 +1,36 @@
 package com.example.galabouttest.ui.account
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import android.content.Context
+import android.net.Uri
 import androidx.lifecycle.ViewModel
-import com.example.galabouttest.R // Import your R class
 
 class AccountViewModel : ViewModel() {
 
-    private val _layoutResId = MutableLiveData<Int>().apply {
-        value = R.layout.updateprofile // Replace with the actual resource ID of your updateprofile.xml layout file
+
+    // Functions for saving profile data and avatar URI
+    fun saveProfileData(context: Context, username: String, name: String, title: String, birthdate: String, residency: String) {
+        // Get SharedPreferences instance
+        val sharedPreferences = context.getSharedPreferences("ProfileData", Context.MODE_PRIVATE)
+        // Get SharedPreferences editor
+        val editor = sharedPreferences.edit()
+        // Store profile data
+        editor.putString("USERNAME", username)
+        editor.putString("NAME", name)
+        editor.putString("TITLE", title)
+        editor.putString("BIRTHDATE", birthdate)
+        editor.putString("RESIDENCY", residency)
+        // Apply changes
+        editor.apply()
     }
-    val layoutResId: LiveData<Int> = _layoutResId
+
+    fun saveAvatarUriToSharedPreferences(context: Context, imageUri: Uri?) {
+        // Get SharedPreferences instance
+        val sharedPreferences = context.getSharedPreferences("ProfileData", Context.MODE_PRIVATE)
+        // Get SharedPreferences editor
+        val editor = sharedPreferences.edit()
+        // Store avatar URI
+        editor.putString("AVATAR_URI", imageUri.toString())
+        // Apply changes
+        editor.apply()
+    }
 }

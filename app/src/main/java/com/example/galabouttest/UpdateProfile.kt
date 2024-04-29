@@ -1,20 +1,18 @@
-package com.example.galabouttest.ui.account
+package com.example.galabouttest
 
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
-import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.example.galabouttest.R
 
-class UpdateProfileActivity : AppCompatActivity() {
+class UpdateProfile : AppCompatActivity() {
 
     private lateinit var editTextUsername: EditText
     private lateinit var editTextName: EditText
@@ -26,20 +24,18 @@ class UpdateProfileActivity : AppCompatActivity() {
     private lateinit var buttonEditAvatar: Button
     private lateinit var imageViewEditAvatar: ImageView
 
-    private val PICK_IMAGE = 1
+    private val picImage = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        enableEdgeToEdge()
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.updateprofile)
 
         // Initialize views
-
-        editTextName = findViewById(R.id.editTextTextPersonName)
-        editTextTitle = findViewById(R.id.editTextTextPersonName2)
-        editTextBirthdate = findViewById(R.id.editTextTextPersonName3)
-        editTextResidency = findViewById(R.id.editTextTextPersonName4)
-
+        editTextUsername = findViewById(R.id.editTextTextPersonName)
+        editTextName = findViewById(R.id.editTextTextPersonName2)
+        editTextTitle = findViewById(R.id.editTextTextPersonName3)
+        editTextBirthdate = findViewById(R.id.editTextTextPersonName4)
         buttonEditAvatar = findViewById(R.id.button12)
 
 
@@ -68,7 +64,7 @@ class UpdateProfileActivity : AppCompatActivity() {
         // Set click listener for edit avatar button
         buttonEditAvatar.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
-            startActivityForResult(gallery, PICK_IMAGE)
+            startActivityForResult(gallery, picImage)
         }
     }
 
@@ -89,7 +85,7 @@ class UpdateProfileActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (resultCode == Activity.RESULT_OK && requestCode == PICK_IMAGE) {
+        if (resultCode == Activity.RESULT_OK && requestCode == picImage) {
             val imageUri = data?.data
             imageViewEditAvatar.setImageURI(imageUri)
 
