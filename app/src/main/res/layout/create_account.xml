@@ -161,7 +161,7 @@
             android:id="@+id/buttonCreateAccount"
             android:layout_width="131dp"
             android:layout_height="43dp"
-            android:background="@drawable/radius"
+            android:background="@color/purple_200"
             android:fontFamily="@font/cabin"
             android:text="Create Account"
             app:layout_constraintBottom_toBottomOf="parent"

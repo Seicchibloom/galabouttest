@@ -37,4 +37,11 @@
             android:id="@+id/action_navigation_notifications_to_navigation_home"
             app:destination="@id/navigation_home" />
     </fragment>
+
+    <!-- Define MainActivity as an activity -->
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.galabouttest.MainActivity"
+        android:label="Main Activity" />
+
 </navigation>

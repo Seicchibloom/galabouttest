@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Galabouttest"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".Login"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
@@ -29,6 +29,13 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+        <activity android:name=".MainActivity"/>
+        <activity android:name=".CreateAccountActivity"/>
+        <activity android:name=".ui.account.UpdateProfileActivity"/>
+        <activity android:name=".ui.home.HomeFragment"/>
+        <activity android:name=".ui.home.HomeViewModel"/>
+        <activity android:name=".ui.accommodations.AccommodationFragment"/>
+        <activity android:name=".ui.accommodations.AccommodationViewModel"/>
     </application>
 
 </manifest>

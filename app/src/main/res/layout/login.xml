@@ -45,7 +45,7 @@
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/radius"
+        android:background="@color/purple_200"
         android:fontFamily="@font/cabin"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,8 +53,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.77"
-        />
+        app:layout_constraintVertical_bias="0.77" />
 
     <TextView
         android:id="@+id/textViewEmail"
@@ -122,6 +121,7 @@
         android:layout_height="38dp"
         android:background="#00000000"
         android:fontFamily="@font/cabin"
+
         android:text="Create"
         android:textAlignment="viewStart"
         android:textColor="#000000"
